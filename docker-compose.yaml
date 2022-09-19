@@ -1,0 +1,12 @@
+version: '3.4'
+services:
+  pwrstatNodeExporter:
+    image: 'threevl/pwrstat-node-exporter:0.0.1'
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        pwrstatVersion: ./versions/PPL_64bit_v1.4.1.deb
+    privileged: true
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
