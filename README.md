@@ -2,6 +2,8 @@
 
 This image allows you to export the [CyberPower PowerPanel](https://www.pwrstatsystems.com/products/software/power-panel-personal/) stats to to Prometheus format so they can be consumed by the [Prometheus Node Exporter](https://hub.docker.com/r/prom/node-exporter) text collector and displayed within [Grafana](https://grafana.com/).
 
+![Grafana UPS display](dashboard.png)
+
 # Installation Docker-Compose
 An easy installation method is to use a docker-compose.yaml file to run the image.
 
