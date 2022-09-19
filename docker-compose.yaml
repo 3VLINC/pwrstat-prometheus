@@ -1,7 +1,7 @@
 version: '3.4'
 services:
-  pwrstatNodeExporter:
-    image: 'threevl/pwrstat-node-exporter:0.0.1'
+  pwrstatPrometheus:
+    image: 'threevl/pwrstat-prometheus:0.0.1'
     build:
       context: .
       dockerfile: Dockerfile

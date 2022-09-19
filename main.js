@@ -22,53 +22,53 @@ var parseData = (data) => {
      );
 
      return `
- # HELP cyberpower_info Information about UPS
- # TYPE cyberpower_info gauge
- cyberpower_info{firmware_num="${info['firmware_num']}", model_name="${info['model_name']}"} 1.0
+ # HELP pwrstat_info Information about UPS
+ # TYPE pwrstat_info gauge
+ pwrstat_info{firmware_num="${info['firmware_num']}", model_name="${info['model_name']}"} 1.0
  
- # HELP cyberpower_utility_volt Voltage from the utility
- # TYPE cyberpower_utility_volt gauge
- cyberpower_utility_volt ${parseFloat(info['utility_volt'])/1000}
+ # HELP pwrstat_utility_volt Voltage from the utility
+ # TYPE pwrstat_utility_volt gauge
+ pwrstat_utility_volt ${parseFloat(info['utility_volt'])/1000}
  
- # HELP cyberpower_output_volt Voltage output
- # TYPE cyberpower_output_volt gauge
- cyberpower_output_volt ${parseFloat(info['output_volt'])/1000}
+ # HELP pwrstat_output_volt Voltage output
+ # TYPE pwrstat_output_volt gauge
+ pwrstat_output_volt ${parseFloat(info['output_volt'])/1000}
  
- # HELP cyberpower_diagnostic_result Result of last diagnostic
- # TYPE cyberpower_diagnostic_result gauge
- cyberpower_diagnostic_result ${parseInt(info['diagnostic_result'], 10)}
+ # HELP pwrstat_diagnostic_result Result of last diagnostic
+ # TYPE pwrstat_diagnostic_result gauge
+ pwrstat_diagnostic_result ${parseInt(info['diagnostic_result'], 10)}
  
- # HELP cyberpower_battery_remainingtime Seconds of battery time remaining
- # TYPE cyberpower_battery_remainingtime gauge
- cyberpower_battery_remainingtime ${parseFloat(info['battery_remainingtime'])*1000}
+ # HELP pwrstat_battery_remainingtime Seconds of battery time remaining
+ # TYPE pwrstat_battery_remainingtime gauge
+ pwrstat_battery_remainingtime ${parseFloat(info['battery_remainingtime'])*1000}
  
- # HELP cyberpower_battery_charging Is battery charging
- # TYPE cyberpower_battery_charging gauge
- cyberpower_battery_charging ${(info['battery_charging'] === 'yes' ? '1' : '0')}
+ # HELP pwrstat_battery_charging Is battery charging
+ # TYPE pwrstat_battery_charging gauge
+ pwrstat_battery_charging ${(info['battery_charging'] === 'yes' ? '1' : '0')}
  
- # HELP cyberpower_battery_discharging Is battery discharging
- # TYPE cyberpower_battery_discharging gauge
- cyberpower_battery_discharging ${(info['battery_discharging'] === 'yes' ? '1' : '0')}
+ # HELP pwrstat_battery_discharging Is battery discharging
+ # TYPE pwrstat_battery_discharging gauge
+ pwrstat_battery_discharging ${(info['battery_discharging'] === 'yes' ? '1' : '0')}
  
- # HELP cyberpower_ac_present Is AC power present
- # TYPE cyberpower_ac_present gauge
- cyberpower_ac_present ${(info['ac_present'] === 'yes' ? '1' : '0')}
+ # HELP pwrstat_ac_present Is AC power present
+ # TYPE pwrstat_ac_present gauge
+ pwrstat_ac_present ${(info['ac_present'] === 'yes' ? '1' : '0')}
  
- # HELP cyberpower_load Load percentage
- # TYPE cyberpower_load gauge
- cyberpower_load ${parseFloat(info['load'])/100000}
+ # HELP pwrstat_load Load percentage
+ # TYPE pwrstat_load gauge
+ pwrstat_load ${parseFloat(info['load'])/100000}
  
- # HELP cyberpower_battery_capacity Percentage of battery remaining
- # TYPE cyberpower_battery_capacity gauge
- cyberpower_battery_capacity ${parseFloat(info['battery_capacity'])/100}
+ # HELP pwrstat_battery_capacity Percentage of battery remaining
+ # TYPE pwrstat_battery_capacity gauge
+ pwrstat_battery_capacity ${parseFloat(info['battery_capacity'])/100}
  
- # HELP cyberpower_input_rating_volt Input voltage rating
- # TYPE cyberpower_input_rating_volt gauge
- cyberpower_input_rating_volt ${parseFloat(info['input_rating_volt'])/1000}
+ # HELP pwrstat_input_rating_volt Input voltage rating
+ # TYPE pwrstat_input_rating_volt gauge
+ pwrstat_input_rating_volt ${parseFloat(info['input_rating_volt'])/1000}
  
- # HELP cyberpower_output_rating_watt Output watts rating
- # TYPE cyberpower_output_rating_watt gauge
- cyberpower_output_rating_watt ${parseFloat(info['output_rating_watt'])/1000}
+ # HELP pwrstat_output_rating_watt Output watts rating
+ # TYPE pwrstat_output_rating_watt gauge
+ pwrstat_output_rating_watt ${parseFloat(info['output_rating_watt'])/1000}
  `;
  }
 
