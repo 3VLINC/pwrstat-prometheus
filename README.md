@@ -16,10 +16,11 @@ services:
     environment:
         PWRSTAT_OUTPUT_FILEPATH: # Rename the output prometheus data file (defaults to pwrstat.prom)
         PWRSTAT_REFRESH_INTERVAL: # Change the refresh interval in ms (defaults to 1000)
-        PWRSTAT_DEBUG: # View debugging information (defaults to 0)
+        PWRSTAT_DEBUG: # View debugging information (defaults to 0) 
     volumes:
         - /dev/bus/usb:/dev/bus/usb # Use this to mount the USB bus of your linux server inside the container so that it can interact with your pwrstat UPS
         - /var/lib/node_exporter/textfile_collector:/root/textfile_collector # Use this to mount the volume where the prometheus data file should be exported to
+        - /pwrstatd.conf:/etc/pwrstatd.conf # OPTIONAL: Set a custom pwrstatd config file to override defaults see pwrstatd.template.conf
 ```
 
 # Accessible metrics
