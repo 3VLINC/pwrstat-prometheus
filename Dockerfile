@@ -8,5 +8,4 @@ RUN dpkg -i /root/PPL_64bit_v1.4.1.deb && npm install pm2@5.3.0 -g
 COPY ./entrypoint.sh /root/entrypoint.sh
 COPY ./main.js /root/main.js
 VOLUME /root/textfile_collector
-VOLUME /etc/pwrstatd.conf
 CMD "/root/entrypoint.sh"
